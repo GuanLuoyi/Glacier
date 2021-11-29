@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLACIER SAVING</title>
+    <link rel="shortcut icon" href="./images/sublogo.png" type="image/x-icon" />
+    <style>
+        @font-face {
+            src: url(./fonts/AsusRog-Regular.ttf);
+            font-family: ROG Fonts;
+        }
+        body{
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        body::-webkit-scrollbar{display: none;}
+        .container{
+            overflow: scroll;
+            display: flex;
+            white-space: nowrap;
+            
+
+        }
+        .background{
+            background:url(./images/微信图片_20210722181240.jpg);
+            height: 100vh;
+            width: 250vw;
+            flex-shrink: 0;
+        }
+        .title{
+            position:absolute;
+            z-index: 1000;
+        }
+        .logo{
+            position: absolute;
+            width: 87px;
+            height: 77.61px;
+            left: 25px;
+            top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+         <div class = "background"></div>
+    </div>
+    <img class = "title" src="images/GLACIER SAVING.png">
+    <img class = "logo" src="images/logo.png">
+
+    <script>
+        let container = document.querySelector('.container')
+        container.addEventListener('wheel', (event)=>{
+            event.preventDefault()
+            container.scrollLeft += event.deltaY
+        })
+        if(container.scrollLeft == (document.body.offsetWidth - container.clientWidth)){
+            document.body.addEventListener('wheel', function (e) {
+              e.preventDefault();
+            })
+        }
+    </script>
+</body>
+</html>
+
