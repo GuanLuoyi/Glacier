@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
             overflow: scroll;
             display: flex;
             white-space: nowrap;
-            
+            z-index: 5;
 
         }
         .background{
@@ -32,9 +32,30 @@
             width: 250vw;
             flex-shrink: 0;
         }
-        .title{
+        .title1{
             position:absolute;
-            z-index: 1000;
+            left:20%;
+            top:20vh;
+            font-family: ROG Fonts;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 11rem;
+            line-height: 173px;
+            text-align: right;
+
+            color: rgba(255, 255, 255, 0.6);
+
+            text-shadow: 0px 0px 60px rgba(83, 199, 224, 0.39);
+            display: none;
+            /* z-index: 1000; */
+            /* display: none; */
+        }
+        .title2{
+            color: rgba(186, 247, 255, 0.68);
+            text-shadow: 0px 0px 60px rgba(83, 199, 224, 0.39);
+
+            /* z-index: 1000; */
+            /* display: none; */
         }
         .logo{
             position: absolute;
@@ -47,24 +68,29 @@
 </head>
 
 <body>
+
+    <div class = "title1 animate__lightSpeedInRight">GLACIER<br><div class = "title2">SAVING</div></div>
+    <img class = "logo" src="images/logo.png">
     <div class="container">
          <div class = "background"></div>
     </div>
-    <img class = "title" src="images/GLACIER SAVING.png">
-    <img class = "logo" src="images/logo.png">
-
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
     <script>
         let container = document.querySelector('.container')
         container.addEventListener('wheel', (event)=>{
             event.preventDefault()
             container.scrollLeft += event.deltaY
+		    container.onscroll = function() {
+			// console.log(document.getElementsByClassName('container').width + " " + container.scrollLeft)
+		    if (container.scrollLeft > window.innerWidth * 1.2) {
+                console.log('到最右侧了');
+                $(".title1").fadeIn("slow");
+                }else{
+                    $(".title1").fadeOut("slow");
+                }
+		      };
         })
-        if(container.scrollLeft == (document.body.offsetWidth - container.clientWidth)){
-            document.body.addEventListener('wheel', function (e) {
-              e.preventDefault();
-            })
-        }
+
     </script>
 </body>
 </html>
-
