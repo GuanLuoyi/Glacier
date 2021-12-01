@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLACIER SAVING</title>
+    <link rel="shortcut icon" href="./images/sublogo.png" type="image/x-icon" />
+    <style>
+        @font-face {
+            src: url(./fonts/AsusRog-Regular.ttf);
+            font-family: ROG Fonts;
+        }
+        body{
+            position: relative;
+            margin: 0;
+            padding: 0;
+            background: #02313B;
+            overflow-y: auto;
+        }
+        body::-webkit-scrollbar{display: none;}
+        .container{
+            overflow: scroll;
+            display: flex;
+            white-space: nowrap;
+            z-index: 5;
+
+        }
+        .container::-webkit-scrollbar{display: none;}
+        .background{
+            background:url(./images/微信图片_20210722181240.jpg);
+            height: 100vh;
+            width: 250vw;
+            flex-shrink: 0;
+        }
+        .title1{
+            position:absolute;
+            left:20%;
+            top:25vh;
+            font-family: ROG Fonts;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 11rem;
+            line-height: 173px;
+            text-align: right;
+
+            color: rgba(255, 255, 255, 0.8);
+
+            text-shadow: 0px 0px 60px rgba(214, 235, 240, 0.39);
+            display: none;
+            /* z-index: 1000; */
+            /* display: none; */
+        }
+        .title2{
+            color: rgba(209, 239, 243, 0.8);
+            text-shadow: 0px 0px 60px rgba(83, 199, 224, 0.39);
+
+            /* z-index: 1000; */
+            /* display: none; */
+        }
+        .logo{
+            position: absolute;
+            width: 87px;
+            height: 77.61px;
+            left: 25px;
+            top: 15px;
+        }
+        .t1{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            background-color: rgba(209, 239, 243, 0);
+        }
+        .homepage{
+            position: relative;
+            width: 100vw;
+            height:100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .line1{
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        left: 0px;
+        top: 35%;
+        }
+        .line2{
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        left: 0px;
+        top: 47%;
+        }
+        .line3{
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        left: 0px;
+        top: 64%;
+        }
+        #text1{
+            position: absolute;
+            width: 100%;
+            top: 23.4%;
+            left:1%;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 10;
+            font-size: 10vh;
+            /* line-height: 75px; */
+            text-align: left;
+
+            color: #FFFFFF;
+        }
+        #text2{
+            position: absolute;
+            width: 100%;
+            top: 36%;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 10vh;
+
+            text-align:center;
+            text-transform: uppercase;
+
+            color: #FFFFFF;
+        }
+        #text3{
+            position: absolute;
+            width: 100%;
+            top: 54%;
+            right: 3%;
+
+            font-family: Roboto;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 10vh;
+            text-align: right;
+            text-transform: uppercase;
+
+            color: #FFFFFF;
+
+        }
+        .point {
+            position: relative;
+            left:25vw;
+            top:25vh;
+            border-radius: 50%;
+            width: 70vw;
+            height: 50vh;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(83, 199, 224, 0.39) 0%, rgba(196, 196, 196, 0) 100%);
+            box-sizing: border-box;
+    }
+    .buttonsnow{
+        position: absolute;
+        right:8rem;
+        bottom:20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .first{
+        position: absolute;
+        transition: 1s;
+    }
+    .sec{
+        position:absolute;
+        transition: 1s;
+    }
+    .buttonsnow:hover .first{
+        transform: scale(1.3) rotate(90deg);
+        transition: 1s;
+    }
+    .buttonsnow:hover .sec{
+        transform: scale(0.9) rotate(-90deg);
+        transition: 1s;
+    }
+    </style>
+</head>
+
+<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <section>
+        <div class="t1"></div>
+        <img class = "logo" src="images/logo.png">
+        <div class="container">
+            <div class = "background"></div>
+            <div class = "title1 animate__lightSpeedInRight">GLACIER<br><div class = "title2">SAVING</div></div>
+            
+        </div>
+    </section>
+
+    <section>
+        <div class="homepage">
+            <div class="point"></div>
+            <div id="text1">GLACIERS ALL OVER THE WORLD </div>   
+            <hr class="line1" color=white size=2>
+            <div id="text2">Are Shrinking Fast </div>
+            <hr class="line2" color=white size=2>
+            <div id="text3">See for Yourself </div>
+            <hr class="line3" color=white size=2>
+            <a href="nav.html">
+                <div class="buttonsnow">
+                    <img src="./images/buttonsolid.png" class="first">
+                    <img src="./images/Vector.png" class="sec">
+                </div>
+            </a>
+        </div>
+      <script>
+        // let point = document.querySelector('.point')
+        // document.addEventListener('mousemove', (e) => {
+        //   point.style.left = e.pageX - point.clientWidth / 2 + 'px'
+        //   point.style.top = e.pageY - point.clientHeight / 2 + 'px'
+        // })
+        let text1 = document.getElementById('text1');
+        let text2 = document.getElementById('text2');
+        let text3 = document.getElementById('text3');
+    
+      </script>
+    </section>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script>
+        let container = document.querySelector('.container')
+        // let body = document.querySelector('body')
+        // function isScroll(e){
+        //     console.log('test');
+        //     event.preventDefault();
+        //     e.scrollLeft += event.deltaY;
+            
+        // }
+        // container.addEventListener('wheel',isScroll(container),{passive:false});
+
+        container.addEventListener('wheel', (event)=>{
+            event.preventDefault()
+            container.scrollLeft += event.deltaY
+        })
+		    container.onscroll = function() {
+			// console.log(document.getElementsByClassName('container').width + " " + container.scrollLeft)
+		    if (container.scrollLeft > window.innerWidth * 1.4) {
+                console.log('到最右侧了');
+                $(".title1").fadeIn("slow");
+                $(".t1").show("slow");
+                }else{
+                    $(".title1").fadeOut("slow");
+                    $(".t1").hide("slow");
+                }
+		      };
+            if(container.scrollTop > window.innerHeight){
+                $(".t1").hide("slow");
+            }
+    </script>
+</body>
+</html>
+

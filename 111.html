@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        .slide{
+            position: absolute;
+            height: 50%;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div id= "slide"></div>
+    <script src="https://cdn.jsdelivr.net/npm/before-after-slider@1.0.1/dist/slider.bundle.js"></script>
+    <script>
+        window.onload = function() {
+          new SliderBar({
+            el: "#slide",
+            beforeImg: './images/1.jpg',
+            afterImg: './images/2.jpg'
+          });
+        }
+      </script>
+</body>
+</html>
