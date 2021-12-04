@@ -10,6 +10,10 @@
     <title>GLACIER SAVING</title>
     <link rel="shortcut icon" href="./images/sublogo.png" type="image/x-icon" />
     <style>
+        @font-face {
+            src: url(./fonts/AsusRog-Regular.ttf);
+            font-family: ROG Fonts;
+        }
         html,
         body {
             position: relative;
@@ -78,15 +82,27 @@
         }
         .box1:hover{
             background-image: url(./images/e30a388ca30bb4eb6569a04309a1dc67.gif);
+            background-size: cover;
+            transform: scale(1.05);
+            transition: 1s;
         }
         .box2:hover{
             background-image: url(./images/d5e730f67df0e8637f6cb7bf2246f350.gif);
+            background-size: cover;
+            transform: scale(1.05);
+            transition: 1s;
         }
         .box3:hover{
             background-image: url(./images/giphy\ \(1\).gif);
+            background-size: cover;
+            transform: scale(1.05);
+            transition: 1s;
         }
         .box4:hover{
             background-image: url(./images/giphy.gif);
+            background-size: cover;
+            transform: scale(1.05);
+            transition: 1s;
         }
 
         .text {
@@ -193,12 +209,165 @@
             top: -2rem;
             width: 70%;
         }
+
+        .open-dialog-button{
+            width: 4vw;
+            height: 5vw;
+            background: url(./images/bluebutton.png);
+            background-size: cover;
+            
+            /* border-radius: 50%; */
+            border:0px;
+        }
+        .open-dialog-button:hover{
+            background: url(./images/bluebutton.gif) repeat;
+            background-size: cover;
+        }
+        .dialog-close-button {
+        color: rgb(49, 46, 46);
+        font-size: 2rem;
+        font-weight: 200;
+        /* height: 5vh;
+        width: 5vh; */
+        border-radius: 50%;
+        outline: none;
+        border: unset;
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .dialog-close-button.text-button,
+        .open-dialog-button.text-button {
+        background-color: transparent;
+        box-shadow: none;
+        color: #000000;
+        }
+        .dialog {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 999;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:space-around;
+        opacity: 0;
+        transition: 0.3s;
+        }
+        .dialog.is-show {
+        opacity: 1;
+        }
+        .dialog.is-show .dialog-main {
+        transform: translateY(0);
+        }
+        .dialog .dialog-modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.3);
+        }
+        .dialog .dialog-main {
+        transition: 0.3s;
+        min-width: 450px;
+        min-height: 100px;
+        max-width: 1000px;
+        max-height: 700px;
+        background-color: rgba(255, 255, 255, 0.8);
+        position: relative;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(10%);
+        }
+        .dialog .dialog-head {
+        text-align: right;
+        }
+        .title{
+        text-align: left;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2rem;
+        color: #0b0261;
+        margin-left: 3vw;
+        display: flex;
+        align-items: flex-end;
+
+        text-shadow: 0px 0px 20px rgba(196, 196, 196, 0.35);
+        }
+        #name{
+            /* font-family:Georgia, serif; */
+            font-family: Roboto;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: rgb(0, 0, 0);
+            margin-left: 3vw;
+            /* border-bottom: 2px solid #5745fa; */
+        }
+        #news{
+            font-family:Georgia, serif;
+            /* font-family: Roboto; */
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: rgb(0, 0, 0);
+            /* margin-left: 3vw; */
+            /* border-bottom: 2px solid #5745fa; */
+        }
+        .dialog .dialog-body {
+        text-align: justify;
+        }
+        .dialog .dialog-body img {
+        /* display: block; */
+        float: left;
+        width: 48vh;
+        height: 60vh;
+        /* margin: 0 auto; */
+        margin-top: 3vh;
+        margin-left: 3vw;
+        /* border-radius: 8px; */
+        object-fit:cover;
+        }
+        .dialog .text {
+        max-width: 50%;
+        height: 60vh;
+        text-align: justify;
+        font-family:Georgia, serif;
+        font-weight: 300;
+        font-size: 1rem;
+        display: block;
+        /* margin: 2rem; */
+        margin-top: 3vh;
+        margin-left: 45%;
+        color: #000000;
+        overflow:scroll;
+        }
+        .text::-webkit-scrollbar{display: none;}
+        .dialog .dialog-body .text-button {
+        margin-top: 15px;
+        }
+        @media screen and (max-width: 768px) {
+        .dialog {
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .dialog .dialog-main {
+            min-width: unset;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+        }
+        }
+
     </style>
 </head>
 <body>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
     <img class = "logo" src="images/logo.png">  
     <a href="">
         <div class = "box box1">
@@ -229,7 +398,7 @@
         </div>
         <div class = "button1">
             <div class = "subtext1">LEARN MORE
-                <a href=""><img class ="bluebutton1" src="images/bluebutton.gif"></a>
+                <button class =" open-dialog-button bluebutton1"></button>
             </div>
         </div>
     </div>
@@ -243,12 +412,145 @@
         </div>
         <div class = "button2">
             <div class = "subtext2">LEARN MORE
-                <img class ="bluebutton2" src="images/bluebutton.gif">
+                <button class =" open-dialog-button bluebutton2"></button>
             </div>
         </div>
     </div>
+    <div class="dialog dialog1" style="display:none">
+    
+        <!-- 不透明遮罩 -->
+        <div class="dialog-modal"></div>
+  
+        <!-- 主体 -->
+        <div class="dialog-main">
+  
+          <div class="dialog-head">
+            <button class="dialog-close-button icon-botton close1">x</button>
+          </div>
+  
+          <!-- 内容区 -->
+          <div class="dialog-body">
+          <div>
+            <div class="title">Good-bye glaciers: 390 billion tons of snow and ice melts each year as globe warms</div>
+            <br>
+            <ins><span id="name">Doyle Rice<span id="news">&nbsp;&nbsp;USA TODAY</span></span></ins>
+            <br>
+            <img src="./images/dialog1.jpeg" alt="">
+            <div class="text"> 
+              Thanks to global warming, our planet's glaciers continue to melt away, losing up to 390 billion tons of ice and snow per year, <a target="_blank" href="https://www.nature.com/articles/s41586-019-1071-0">a new study</a> suggests.
 
+              The largest losses were glaciers in Alaska, followed by the melting ice fields in southern South America and glaciers in the Arctic.
+              
+              "Over 30 years, suddenly almost all regions started losing mass at the same time," said study lead author Michael Zemp of the University of Zurich. "That's clearly climate change if you look at the global picture."
+              
+              He said glaciers could almost disappear in some mountain ranges by the end of the century, including those in the U.S.！
+              <br>
+              <br>
+                  The world's seas have risen about an inch in the past 50 years just due to glacier melt alone, according to the study. 
 
- 
+                  In fact, the current rate of contribution from glaciers to sea-level rise is about the same as that from the Greenland ice sheet and is more than the contribution from the Antarctic ice sheet.
+
+              <br>
+              <br>
+                Since 1961, the world has lost 10.6 trillion tons of ice and snow, the study reported. Melted, that's enough to cover the lower 48 U.S. states in about 4 feet of water.
+
+                Man-made climate change, aka global warming, is caused by the burning of fossil fuels such as gas, coal and oil, which release greenhouse gases such as carbon dioxide (CO2) and methane into the atmosphere. This extra CO2 causes temperatures of the atmosphere and oceans to rise to levels that can't be explained by natural causes.
+              <br>
+              <br>
+                Monday's study, "is telling us there's much more to the story," said Mark Serreze, director of <a target="_blank" href="https://nsidc.org/">the National Snow and Ice Data Center</a> in Boulder, Colorado, who wasn't part of the study. "The influence of glaciers on sea level is bigger than we thought."
+                The study, published Monday in the peer-reviewed British journal Nature, was the most comprehensive measurement of Earth's glaciers ever done.
+            <br><br>
+                <em>Contributing: The Associated Press</em>
+                <br>
+                <a target="_blank" href="https://www.usatoday.com/story/news/nation/2019/04/08/glaciers-melting-ice-melts-due-global-warming-sea-levels-rise/3405569002/"><div align="right"><ins>Soure:USA TODAY</ins></div></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="dialog dialog2" style="display:none">
+    
+        <!-- 不透明遮罩 -->
+        <div class="dialog-modal"></div>
+  
+        <!-- 主体 -->
+        <div class="dialog-main">
+  
+          <div class="dialog-head">
+            <button class="dialog-close-button icon-botton close2">X</button>
+          </div>
+  
+          <!-- 内容区 -->
+          <div class="dialog-body">
+          <div>
+            <div class="title">Glaciers, the great guardians of the stability of the planet's climate</div>
+            <br>
+            <ins><span id="name">#environmental sustainability &nbsp;&nbsp;#nature &nbsp;&nbsp;#climate change</span></ins>
+            <br>
+            <img src="./images/dialog2.jpg" alt="">
+            <div class="text"> 
+                The melting of the glaciers, a phenomenon that intensified in the 20th century, is leaving our planet iceless. Human activity is the main culprit in the emission of carbon dioxide and other greenhouse gases. The sea level and global stability depend on how these great masses of recrystallized snow evolve.
+              <br>
+              <br>
+              The Earth's glaciers have been silently retreating for more than half a century as climate change inexorably marches on. There is no place on the planet — except south-east Asia — capable of withstanding the effects of a phenomenon that has melted more than 9.6 billion tonnes of glacial ice in the world since 1961, according to a 2019 satellite study by the University of Zurich (Switzerland), and threatens to evaporate over a third of all glaciers by 2100, according to the World Wildlife Fund.
+              <br>
+              <br>
+              WHAT IS A GLACIER AND HOW DOES IT FORM?
+              <br>
+              These massive blocks of moving ice arise as snow accumulated in cold places compacts and recrystallizes, as is the case, for example, in mountain and polar glaciers, which should not be confused with the gigantic Arctic plates. Glaciers are classified according to their morphology — ice fields, cirque glaciers, valley glaciers, etc. — the climate — polar, tropical or temperate — and their thermal conditions — cold, hot or polythermal base —.
+              The formation of a glacier takes millennia, and its size varies depending on the amount of ice it retains throughout its lifespan. The behaviour of these masses is reminiscent of that of the rivers they feed during thaws, and their speed depends on friction and the slope of the terrain over which they move. In total, glaciers cover 10% of the Earth's surface and, along with the ice caps, account for nearly 70% of the world's fresh water.
+              <br>
+              <br>
+              WHY DO GLACIERS MELT? CAUSES
+            <br>
+            <ul>
+                <li>CO2 emissions: the atmospheric concentration of carbon dioxide and other greenhouse gases (GHGs) produced by industry, transport, deforestation and burning fossil fuels, amongst other human activities, warm the planet and cause glaciers to melt.</li>
+                <li>Ocean warming: oceans absorb 90% of the Earth's warmth, and this fact affects the melting of marine glaciers, which are mostly located near the poles and on the coasts of Alaska (United States).</li>
+            </ul>
+            <br>
+                <a target="_blank" href="https://www.iberdrola.com/environment/melting-glaciers-causes-effects-solutions"><div align="right"><ins>Soure:iberdrola</ins></div></a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <script>
+        function showdialog(dialog) {
+        dialog.removeAttribute('style')
+        const timer = setTimeout(() => {
+            dialog.classList.add('is-show')
+            clearTimeout(timer)
+        }, 20)
+        }
+
+        function closedialog(dialog) {
+        dialog.classList.remove('is-show')
+        const timer = setTimeout(() => {
+            dialog.setAttribute('style', 'display:none')
+            clearTimeout(timer)
+        }, 300)
+        }
+
+        function boostrap() {
+        const dialog = document.querySelector('.dialog1')
+        // open btn
+        const openButton = document.querySelector('.bluebutton1')
+        openButton.addEventListener('click', showdialog.bind(null, dialog))
+
+        // close btns
+        const closeButtons = dialog.querySelectorAll('.close1')
+        closeButtons.forEach(c => c.addEventListener('click', closedialog.bind(null, dialog)))
+
+        const dialog1 = document.querySelector('.dialog2')
+        // open btn
+        const openButton2 = document.querySelector('.bluebutton2')
+        openButton2.addEventListener('click', showdialog.bind(null, dialog1))
+
+        // close btns
+        const closeButtons2 = dialog1.querySelectorAll('.close2')
+        closeButtons.forEach(c => c.addEventListener('click', closedialog.bind(null, dialog1)))
+        }
+        boostrap()
+        </script>
 </body>
 </html>
